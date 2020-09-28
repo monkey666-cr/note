@@ -38,3 +38,21 @@ apt install jnettop
 
 ## Frida-server自定义名称，端口和链接
 
+制定frida的端口
+
+```bash
+./frida-server -l 0.0.0.0:8888
+```
+
+通过frida-ps 查看
+
+```bash
+frida-ps -H 192.168.0.101:8888
+```
+
+注入脚本
+
+```bash
+frida -H 192.168.0.101:8888 -f com.android.settings -l script.js --no-pause
+```
+
